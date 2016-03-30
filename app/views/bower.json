@@ -1,0 +1,23 @@
+{
+  "name": "phpMVCseed",
+  "description": "seed for MVC using php",
+  "main": "index.php",
+  "moduleType": [
+    "globals"
+  ],
+  "authors": [
+    "Carlos Alvarez"
+  ],
+  "license": "MIT",
+  "homepage": "vikingosteam.com.ve",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6"
+  }
+}

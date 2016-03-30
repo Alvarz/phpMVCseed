@@ -3,25 +3,41 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>#TITLE#</title>
-<link rel="stylesheet" type="text/css" href="app/views/default/css/estilo.css"/>
+<link rel="stylesheet" href="app/views/bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+<!-- <link rel="stylesheet" type="text/css" href="app/views/default/css/estilo.css"/> -->
 </head>
 <body>
 <div id="wrapper">
   <!-- header -->
-        <div id="header">
+        <div >
      #HEADER#
   </div>
-  <!-- end: header -->
-  <!-- columna izquierda -->
-        <div id="leftcolumn">
-    #MENULEFT#
+    <!-- end: header -->
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-2">
+        <!-- columna izquierda -->
+              <div >
+          #MENULEFT#
+        </div>
+        <!-- end: columna izquierda -->
+      </div>
+      <div class="col-sm-10">
+        <!-- contenido -->
+        <div >
+          #CONTENIDO#
+        </div>
+        <!-- end: contenido -->
+      </div>
+    </div>
+
+
   </div>
-  <!-- end: columna izquierda -->
-  <!-- contenido -->
-  <div id="content">
-    #CONTENIDO#
-  </div>
-  <!-- end: contenido -->
+
+
+
 </div>
+<script src="app/views/bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
+<script src="app/views/bower_components/bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script>
 </body>
 </html>
