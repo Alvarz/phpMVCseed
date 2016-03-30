@@ -1,14 +1,18 @@
 <?php
+/**
+ *@author Carlos Alvarez <carlosxviii@gmail.com>
+ */
 
 class MainController{
 
 
-   /* METODO QUE CARGA LAS PARTES PRINCIPALES DE LA PAGINA WEB
-   INPUT
-   $title | titulo en string del header
-   OUTPIT
-   $pagina | string que contiene toda el cocigo HTML de la plantilla
-   */
+   /**
+    * @param $title | titulo en string del header
+    *
+    * @return  $pagina | string que contiene toda el cocigo HTML de la plantilla
+    *
+    * @description  METODO QUE CARGA LAS PARTES PRINCIPALES DE LA PAGINA WEB
+    */
    protected function load_template($title = 'Sin Titulo')
    {
        $pagina = $this->load_page('app/views/default/page.php');
@@ -21,35 +25,39 @@ class MainController{
        return $pagina;
    }
 
-   /* METODO QUE CARGA UNA PAGINA DE LA SECCION VIEW Y LA MANTIENE EN MEMORIA
-   INPUT
-   $page | direccion de la pagina
-   OUTPUT
-   STRING | devuelve un string con el codigo html cargado
-   */
+   /**
+    * @param  $page | direccion de la pagina
+    *
+    * @return   STRING | devuelve un string con el codigo html cargado
+    *
+    * @description  METODO QUE CARGA UNA PAGINA DE LA SECCION VIEW Y LA MANTIENE EN MEMORIA
+    */
    protected function load_page($page)
    {
        return file_get_contents($page);
    }
 
-   /* METODO QUE ESCRIBE EL CODIGO PARA QUE SEA VISTO POR EL USUARIO
-   INPUT
-   $html | codigo html
-   OUTPUT
-   HTML | codigo html
-   */
+
+   /**
+    * @param   $html | codigo html
+    *
+    * @return   HTML | codigo html
+    *
+    * @description  METODO QUE ESCRIBE EL CODIGO PARA QUE SEA VISTO POR EL USUARIO
+    */
    protected function view_page($html)
    {
        echo $html;
    }
 
-   /* PARSEA LA PAGINA CON LOS NUEVOS DATOS ANTES DE MOSTRARLA AL USUARIO
-   INPUT
-   $out | es el codigo html con el que sera reemplazada la etiqueta CONTENIDO
-   $pagina | es el codigo html de la pagina que contiene la etiqueta CONTENIDO
-   OUTPUT
-   HTML | cuando realiza el reemplazo devuelve el codigo completo de la pagina
-   */
+   /**
+    * @param   $out | es el codigo html con el que sera reemplazada la etiqueta CONTENIDO
+    * @param   $pagina | es el codigo html de la pagina que contiene la etiqueta CONTENIDO
+    *
+    * @return   HTML | cuando realiza el reemplazo devuelve el codigo completo de la pagina
+    *
+    * @description  PARSEA LA PAGINA CON LOS NUEVOS DATOS ANTES DE MOSTRARLA AL USUARIO
+    */
    protected function replace_content($in = '/\#CONTENIDO\#/ms', $out, $pagina)
    {
        return preg_replace($in, $out, $pagina);

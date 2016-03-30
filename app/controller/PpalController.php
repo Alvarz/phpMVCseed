@@ -1,5 +1,7 @@
 <?php
-
+/**
+ *@author Carlos Alvarez <carlosxviii@gmail.com>
+ */
 
 require 'MainController.php';
 
@@ -7,6 +9,15 @@ class PpalController extends MainController
 {
 
 
+
+  /**
+   * @param   $out | es el codigo html con el que sera reemplazada la etiqueta CONTENIDO
+   * @param   $pagina | es el codigo html de la pagina que contiene la etiqueta CONTENIDO
+   *
+   * @return   HTML | cuando realiza el reemplazo devuelve el codigo completo de la pagina
+   *
+   * @description  PARSEA LA PAGINA CON LOS NUEVOS DATOS ANTES DE MOSTRARLA AL USUARIO
+   */
     public function buscar($carrera, $cantidad)
     {
         $universitario = new universitario();
@@ -33,10 +44,13 @@ class PpalController extends MainController
         $this->view_page($pagina);
     }
 
-   /* METODO QUE MUESTRA LA PAGINA PRINCIPAL CUANDO NO EXISTEN NUEVAS ORDENES
- OUTPUT
- HTML | codigo html de la pagina
- */
+
+ /**
+  *
+  * @return   codigo html de la pagina
+  *
+  * @description  METODO QUE MUESTRA LA PAGINA PRINCIPAL CUANDO NO EXISTEN NUEVAS ORDENES
+  */
    public function principal()
    {
        $pagina = $this->load_template('Pagina Principal MVC');
@@ -45,10 +59,13 @@ class PpalController extends MainController
        $this->view_page($pagina);
    }
 
-   /* METODO QUE MUESTRA LA PAGINA HISTORIA DE BOLIVIA, ES UNA PAGINA ESTATICA
- OUTPUT
- HTML | codigo html de la pagina
- */
+
+ /**
+  *
+  * @return   HTML | codigo html de la pagina
+  *
+  * @description  METODO QUE MUESTRA LA PAGINA HISTORIA DE BOLIVIA, ES UNA PAGINA ESTATICA
+  */
    public function historia()
    {
        $pagina = $this->load_template('History of Bolivia');
@@ -56,9 +73,13 @@ class PpalController extends MainController
        $pagina = $this->replace_content('/\#CONTENIDO\#/ms', $html, $pagina);
        $this->view_page($pagina);
    }
-   /* METODO QUE MUESTRA EN PANTALLA EL FORMULARIO DE BUSQUEDA
-   HTML | codigo html de la pagina con el buscador incluido
-   */
+
+   /**
+    *
+    * @return   HTML | codigo html de la pagina con el buscador incluido
+    *
+    * @description  METODO QUE MUESTRA EN PANTALLA EL FORMULARIO DE BUSQUEDA
+    */
    public function buscador()
    {
        $pagina = $this->load_template('Busqueda de registros');
