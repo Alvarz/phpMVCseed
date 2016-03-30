@@ -1,6 +1,6 @@
 <?php
 
-class mainController{
+class MainController{
 
 
    /* METODO QUE CARGA LAS PARTES PRINCIPALES DE LA PAGINA WEB

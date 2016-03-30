@@ -1,9 +1,9 @@
 <?php
 
 require 'app/model/library/agents.php';
-require 'mainController.php';
+require 'MainController.php';
 
-class agentsController extends mainController
+class AgentsController extends MainController
 {
     /* METODO QUE RECIBE LA ORDEN DE BUSQUEDA, PREPARA LOS DATOS Y SE COMUNICA
  CON EL MODELO PARA REALIZAR LA CONSULTA

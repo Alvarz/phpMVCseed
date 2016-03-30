@@ -1,9 +1,9 @@
 <?php
 
 
-require 'mainController.php';
+require 'MainController.php';
 
-class ppalController extends mainController
+class PpalController extends MainController
 {
 
 
